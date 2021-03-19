@@ -58,7 +58,6 @@ resource "aws_instance" "stock-check" {
   instance_type = "t2.micro"
   key_name = "aws_id_rsa"
   vpc_security_group_ids = [aws_security_group.stock-check-sec-group.id]
-
 }
 
 output "web-address" {
