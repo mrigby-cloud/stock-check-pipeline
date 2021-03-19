@@ -54,9 +54,9 @@ resource "aws_security_group" "stock-check-sec-group" {
 }
 
 resource "aws_instance" "stock-check" {
-  ami           = "ami-0915bcb5fa77e4892"
-  instance_type = "t2.micro"
-  key_name = "aws_id_rsa"
+  ami                    = "ami-0915bcb5fa77e4892"
+  instance_type          = "t2.micro"
+  key_name               = "aws_id_rsa"
   vpc_security_group_ids = [aws_security_group.stock-check-sec-group.id]
 }
 
