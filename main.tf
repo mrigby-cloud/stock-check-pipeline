@@ -12,7 +12,7 @@ terraform {
   required_version = "~> 0.14"
 
   backend "remote" {
-    organization = "mrigby-cloud"
+    organization = "mrigby-cloudf"
 
     workspaces {
       name = "playground"
