@@ -62,5 +62,5 @@ resource "aws_instance" "stock-check" {
 }
 
 output "web-address" {
-  value = "${aws_instance.web.public_dns}:8080"
+  value = aws_instance.stock-check.public_dns
 }
