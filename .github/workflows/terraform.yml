@@ -1,4 +1,4 @@
-name: "Terraform3"
+name: "Terraform"
 
 on:
   push:
@@ -61,7 +61,7 @@ jobs:
               body: output
             })
 
-      - name: Terraform Plan Stats
+      - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
