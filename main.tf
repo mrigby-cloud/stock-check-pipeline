@@ -63,3 +63,12 @@ resource "aws_instance" "stock-check" {
 output "web-address" {
   value = aws_instance.stock-check.public_dns
 }
+
+resource "local_file" "instance_ip" {
+  content = <<-DOC
+    # Test output from terraform
+
+    tf_environment: ${aws_instance.stock-check.public_dns}
+    DOC
+  filename = "./instance_ip.yml"
+}

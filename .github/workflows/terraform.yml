@@ -69,14 +69,14 @@ jobs:
       #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       #   run: terraform apply -auto-approve
   
-      - name: make a file
-        run: echo -n -e "HELLO\n !\n World!" > text.txt
+      # - name: make a file
+      #   run: echo -n -e "HELLO\n !\n World!" > text.txt
 
       - name: save the file
         uses: pCYSl5EDgo/cat@master
         id: hello
         with:
-          path: text.txt
+          path: instance_ip.yml
         
       - name: echo the file
         run: echo $TEXT
