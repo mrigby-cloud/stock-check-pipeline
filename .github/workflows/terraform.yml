@@ -76,7 +76,7 @@ jobs:
         uses: pCYSl5EDgo/cat@master
         id: hello
         with:
-          path: instance_ip.yml
+          path: instance_ip.yaml
         
       - name: echo the file
         run: echo $TEXT
