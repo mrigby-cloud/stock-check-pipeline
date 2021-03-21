@@ -69,17 +69,14 @@ jobs:
       #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       #   run: terraform apply -auto-approve
   
-  echo:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - run: echo -n -e "HELLO\n !\n World!" > text.txt
+      - name: cat a file
+      - run: echo -n -e "HELLO\n !\n World!" > text.txt
 
-    - uses: pCYSl5EDgo/cat@master
-      id: hello
-      with:
-        path: text.txt
-      
-    - run: echo $TEXT
-      env:
-        TEXT: ${{ steps.hello.outputs.text }}
+      - uses: pCYSl5EDgo/cat@master
+        id: hello
+        with:
+          path: text.txt
+        
+      - run: echo $TEXT
+        env:
+          TEXT: ${{ steps.hello.outputs.text }}
