@@ -65,9 +65,9 @@ jobs:
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-      # - name: Terraform Apply
-      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      #   run: terraform apply -auto-approve
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve
   
       # - name: make a file
       #   run: echo -n -e "HELLO\n !\n World!" > text.txt
@@ -76,7 +76,7 @@ jobs:
         uses: pCYSl5EDgo/cat@master
         id: hello
         with:
-          path: instance_ip.yaml
+          path: instance_ip.yml
         
       - name: echo the file
         run: echo $TEXT
